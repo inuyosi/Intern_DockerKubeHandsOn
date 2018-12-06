@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: "DaemonSet"
+metadata:
+  name: ex8-ds
+  namespace: ex8
+  labels:
+    app: redis
+spec:
+  template:
+    metadata:
+      labels:
+        app: redis
+    spec:
+      nodeSelector:
+        ex8-node: "true"
+      containers:
+        - name: redis
+          image: redis

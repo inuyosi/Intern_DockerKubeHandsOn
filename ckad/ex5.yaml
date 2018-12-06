@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: frontend
+  namespace: ex5
+  labels:
+    type: frontend
+spec:
+  containers:
+    - name: nginx-front
+      image: nginx:1.12-alpine
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: backend
+  namespace: ex5
+  labels:
+    type: backend
+spec:
+  containers:
+    - name: nginx-back
+      image: nginx:1.12-alpine
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: sample-ipblock-ingress-networkpolicy
+  namespace: ex5
+spec:
+  podSelector:
+    matchLabels:
+      type: backend
+  policyTypes:
+  - Ingress
+  ingress:
+  - from:
+    - ipBlock:
+        cidr: 10.48.1.83/32
+    ports:
+    - protocol: TCP
+      port: 80

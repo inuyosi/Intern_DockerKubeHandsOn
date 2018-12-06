@@ -1,0 +1,45 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ex3
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ex5
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ex6
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ex2
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ex4
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ex7
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ex8
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ex9
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ex10
+---

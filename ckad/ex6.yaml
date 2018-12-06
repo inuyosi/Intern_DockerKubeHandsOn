@@ -1,0 +1,60 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  namespace: ex6
+  labels: 
+    app: sample-app
+    ex: nginx    
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx:1.13
+  nodeSelector:
+    disktype: ssd
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: memcached
+  namespace: ex6
+  labels: 
+    app: sample-app
+    ex: memcached    
+spec:
+  containers:
+    - name: memcahed-container
+      image: memcached
+  nodeSelector:
+    disktype: ssd
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: redis
+  namespace: ex6
+  labels: 
+    app: sample-app
+    ex: redis
+spec:
+  containers:
+    - name: redis-container
+      image: redis
+  nodeSelector:
+    disktype: ssd
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: httpd
+  namespace: ex6
+  labels: 
+    app: sample-app
+    ex: httpd
+spec:
+  containers:
+    - name: httpd-container
+      image: httpd
+  nodeSelector:
+    disktype: ssd
+---

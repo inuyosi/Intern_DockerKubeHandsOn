@@ -1,0 +1,18 @@
+[root@ca-intern-vm homework]# kubectl get deployments
+NAME                              DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+sample-configmap2-single-volume   3         3         3            3           8m
+sample-deployment2                3         3         3            3           1h
+[root@ca-intern-vm homework]# kubectl get pods
+NAME                                               READY     STATUS    RESTARTS   AGE
+sample-configmap2-single-volume-5fdd8f57b9-79kl9   1/1       Running   0          9m
+sample-configmap2-single-volume-5fdd8f57b9-89l2r   1/1       Running   0          9m
+sample-configmap2-single-volume-5fdd8f57b9-fq76d   1/1       Running   0          9m
+sample-deployment2-5b75c7b69-58rdz                 1/1       Running   0          1h
+sample-deployment2-5b75c7b69-svb4z                 1/1       Running   0          1h
+sample-deployment2-5b75c7b69-w6mj9                 1/1       Running   0          1h
+[root@ca-intern-vm homework]# kubectl get configmap sample-configmap -o json |jq .data
+{
+  "index.html": "<html>sample</html>\n"
+}
+[root@ca-intern-vm homework]# kubectl exec -it sample-configmap2-single-volume-5fdd8f57b9-79kl9 -- cat /usr/share/nginx/html/index.html
+<html>sample</html>
