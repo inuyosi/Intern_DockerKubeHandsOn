@@ -80,7 +80,6 @@ Deployment の挙動について答えてください。
 
 - strategy の Type が `Recreate` の場合と `RollingUpdate` の場合で Deployment の更新時にどのような挙動の違いがあるのか答えて下さい
 - `RollingUpdate` の Deployment を `Rrecreate` と同じ挙動になるように設定するにはどのようにしたらいいか答えて下さい (replicas は 3 とします)
-- 答えは @長谷川誠/makocchi に DM で送って下さい
 
 # 5
 
